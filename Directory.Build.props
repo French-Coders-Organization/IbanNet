@@ -2,4 +2,11 @@
   <PropertyGroup>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+
+  <!-- Enable reference assemblies for .NET 4.x for all projs -->
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net4'))">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>
